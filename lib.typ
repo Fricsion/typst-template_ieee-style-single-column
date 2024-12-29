@@ -25,6 +25,9 @@
   // Use "Figure" instead of "Fig." for computer-related publications.
   figure-supplement: [Fig.],
 
+  // 目次を自動で生成するか？
+  toc: true,
+
   // The paper's content.
   body
 ) = {
@@ -225,6 +228,11 @@
     ]
     #v(2pt)
   ]
+
+  // 目次を生成
+  if toc {
+    outline()
+  }
 
   // Display the paper's contents.
   set par(leading: 0.5em)
