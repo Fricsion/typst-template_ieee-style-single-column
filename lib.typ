@@ -1,6 +1,6 @@
 // This function gets your whole document as its `body` and formats
 // it as an article in the style of the IEEE.
-#let ieee(
+#let ieee-single(
   // The paper's title.
   title: [Paper Title],
 
