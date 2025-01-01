@@ -25,9 +25,6 @@
   // Use "Figure" instead of "Fig." for computer-related publications.
   figure-supplement: [Fig.],
 
-  // 目次を自動で生成するか？
-  toc: true,
-
   // The paper's content.
   body
 ) = {
@@ -37,7 +34,7 @@
   // Set the body font.
   // As of 2024-08, the IEEE LaTeX template uses wider interword spacing
   // - See e.g. the definition \def\@IEEEinterspaceratioM{0.35} in IEEEtran.cls
-  set text(font: "TeX Gyre Termes", size: 10pt, spacing: .35em)
+  set text(font: "TeX Gyre Termes", size: 12pt, spacing: .35em) // フォントサイズ指定 size
 
   // Enums numbering
   set enum(numbering: "1)a)i)")
@@ -46,10 +43,10 @@
   show figure: set block(spacing: 15.5pt)
   show figure: set place(clearance: 15.5pt)
   show figure.where(kind: table): set figure.caption(position: top)
-  show figure.where(kind: table): set text(size: 8pt)
+  show figure.where(kind: table): set text(size: 10pt)
   show figure.where(kind: table): set figure(numbering: "I")
   show figure.where(kind: image): set figure(supplement: figure-supplement, numbering: "1")
-  show figure.caption: set text(size: 8pt)
+  show figure.caption: set text(size: 10pt) // 画像・図キャプションのフォントサイズ
   show figure.caption: set align(start)
   show figure.caption.where(kind: table): set align(center)
 
@@ -126,13 +123,13 @@
       1
     }
 
-    set text(10pt, weight: 400)
+    set text(12pt, weight: 400) // ヘディングのフォントサイズを指定
     if it.level == 1 {
       // First-level headings are centered smallcaps.
       // We don't want to number the acknowledgment section.
       let is-ack = it.body in ([Acknowledgment], [Acknowledgement], [Acknowledgments], [Acknowledgements])
       set align(center)
-      set text(if is-ack { 10pt } else { 11pt })
+      set text(if is-ack { 13pt } else { 14pt }) // ヘディング1のフォントサイズ指定
       show: block.with(above: 15pt, below: 13.75pt, sticky: true)
       show: smallcaps
       if it.numbering != none and not is-ack {
@@ -144,7 +141,7 @@
       // Second-level headings are run-ins.
       set par(first-line-indent: 0pt)
       set text(style: "italic")
-      show: block.with(spacing: 10pt, sticky: true)
+      show: block.with(spacing: 20pt, sticky: true) // spacing: ヘディングのあとの行間スペース
       if it.numbering != none {
         numbering("A.", deepest)
         h(7pt, weak: true)
@@ -156,13 +153,13 @@
         numbering("a)", deepest)
         [ ]
       }
-      _#(it.body):_
+      *_#(it.body):_*
     ]
   }
 
   // Style bibliography.
-  show std.bibliography: set text(8pt)
-  show std.bibliography: set block(spacing: 0.5em)
+  show std.bibliography: set text(9pt)
+  show std.bibliography: set block(spacing: 0.7em)
   set std.bibliography(title: text(10pt)[References], style: "ieee")
 
   // Display the paper's title and authors at the top of the page,
@@ -216,11 +213,11 @@
   )
 
   // Configure paragraph properties.
-  set par(spacing: 0.45em, justify: true, first-line-indent: 1em, leading: 0.45em)
+  set par(spacing: 1.3em, justify: true, first-line-indent: 1em, leading: 0.6em) // パラグラフの間のスペースをspacing: で編集可能
 
   // Display abstract and index terms.
   if abstract != none [
-    #set text(9pt, weight: 700, spacing: 150%)
+    #set text(11pt, weight: 700, spacing: 150%)
     #h(1em) _Abstract_---#h(weak: true, 0pt)#abstract
 
     #if index-terms != () [
@@ -229,13 +226,8 @@
     #v(2pt)
   ]
 
-  // 目次を生成
-  if toc {
-    outline()
-  }
-
   // Display the paper's contents.
-  set par(leading: 0.5em)
+  set par(leading: 1.2em) // leading: の値を変更して行間のスペースを指定
   body
 
   // Display bibliography.

@@ -85,3 +85,8 @@ The distances were calculated with @eq:gamma that we presented in @sec:methods.
 #lorem(240)
 
 #lorem(240)
+
+#set quote(block: true)
+#quote(attribution: [Random Guy])[
+  hello, world. this statement makes zero sense. But I hope you like it!
+]
