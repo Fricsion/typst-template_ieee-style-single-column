@@ -1,12 +1,12 @@
 [package]
-name = "ieee-single-column"
+name = "ieee-style-single-column"
 version = "0.1.0"
 compiler = "0.12.0"
 entrypoint = "lib.typ"
-repository = "https://github.com/Fricsion/typst-ieee-single"
-authors = ["Tiz <https://mazmr.com>"]
-license = "MIT-0"
-description = "An IEEE-style paper template to publish at conferences and journals for Electrical Engineering, Computer Science, and Computer Engineering"
+repository = "https://github.com/Fricsion/typst-template_ieee-style-single-column"
+authors = ["Taiki M. <https://mazmr.com>"]
+license = "MIT"
+description = "I like IEEE style of references/bibliography. And I wanted it to be single column instead of two."
 keywords = ["Institute of Electrical and Electronics Engineers", "IEEE", "Electrical Engineering", "Computer Science", "Computer Engineering", "Software"]
 categories = ["paper"]
 disciplines = ["computer-science", "engineering"]
