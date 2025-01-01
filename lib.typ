@@ -25,6 +25,9 @@
   // Use "Figure" instead of "Fig." for computer-related publications.
   figure-supplement: [Fig.],
 
+  // グローバルのフォント
+  global-font: "Tex Gyre Termes", 
+  
   // The paper's content.
   body
 ) = {
@@ -34,13 +37,13 @@
   // Set the body font.
   // As of 2024-08, the IEEE LaTeX template uses wider interword spacing
   // - See e.g. the definition \def\@IEEEinterspaceratioM{0.35} in IEEEtran.cls
-  set text(font: "TeX Gyre Termes", size: 12pt, spacing: .35em) // フォントサイズ指定 size
+  set text(font: global-font, size: 12pt, spacing: .35em) // size: フォントサイズ指定 
 
   // Enums numbering
   set enum(numbering: "1)a)i)")
 
   // Tables & figures
-  show figure: set block(spacing: 15.5pt)
+  show figure: set block(spacing: 25pt) // spacing: 図の表現の上下のスペース
   show figure: set place(clearance: 15.5pt)
   show figure.where(kind: table): set figure.caption(position: top)
   show figure.where(kind: table): set text(size: 10pt)
@@ -92,7 +95,7 @@
 
   // Configure equation numbering and spacing.
   set math.equation(numbering: "(1)")
-  show math.equation: set block(spacing: 0.65em)
+  show math.equation: set block(spacing: 1.5em) // spacing: 数式ブロックの上下のスペース
 
   // Configure appearance of equation references
   show ref: it => {
@@ -158,7 +161,7 @@
   }
 
   // Style bibliography.
-  show std.bibliography: set text(9pt)
+  show std.bibliography: set text(9pt) // 参考文献のテキストサイズ
   show std.bibliography: set block(spacing: 0.7em)
   set std.bibliography(title: text(10pt)[References], style: "ieee")
 

@@ -23,7 +23,18 @@
   ),
   index-terms: ("Scientific writing", "Typesetting", "Document creation", "Syntax"),
   bibliography: bibliography("refs.bib"),
+  global-font: ("American Typewriter", "Hiragino Kaku Gothic Interface"), // グローバルのフォントを指定可能
 )
+
+// // フォントファミリーを指定
+// #set text(font: (
+//   "American Typewriter",
+//   // "Hiragino Kaku Gothic Interface"
+// ))
+
+#outline()
+// ページ番号をふる
+#set page(numbering: "1 / 1",)
 
 // Your content goes below.
 = Introduction
@@ -34,9 +45,6 @@ In this paper we introduce Typst, a new typesetting system designed to streamlin
 
 By leveraging advanced algorithms and a user-friendly interface, Typst offers several advantages over existing typesetting systems, including faster document creation, simplified syntax, and increased ease-of-use.
 
-To demonstrate the potential of Typst, we conducted a series of experiments comparing it to other popular typesetting systems, including LaTeX. Our findings suggest that Typst offers several benefits for scientific writing, particularly for novice users who may struggle with the complexities of LaTeX. Additionally, we demonstrate that Typst offers advanced features for experienced users, allowing for greater customization and flexibility in document creation.
-
-Overall, we believe that Typst represents a significant step forward in the field of scientific writing and typesetting, providing researchers with a valuable tool to streamline their workflow and focus on what really matters: their research. In the following sections, we will introduce Typst in more detail and provide evidence for its superiority over other typesetting systems in a variety of scenarios.
 
 = Methods <sec:methods>
 #lorem(45)
@@ -82,11 +90,21 @@ In @fig:sun you can see a common representation of the Sun, which is a star that
 In @tab:planets, you see the planets of the solar system and their average distance from the Sun.
 The distances were calculated with @eq:gamma that we presented in @sec:methods.
 
-#lorem(240)
-
-#lorem(240)
+= Test Block Quote
+#lorem(50)
 
 #set quote(block: true)
 #quote(attribution: [Random Guy])[
   hello, world. this statement makes zero sense. But I hope you like it!
 ]
+
+= 日本語テスト
+これは正常に表示されていますか？
+
+英語と並んでいるときも、ズレずにcorrectly表示されていますか？
+
+hello, world
+
+英語に挟まれているときも、正常に表示されていますか？
+
+goodbye, world
