@@ -1,6 +1,6 @@
 // This function gets your whole document as its `body` and formats
 // it as an article in the style of the IEEE.
-#let ieee-single(
+#let ieee-monoligh(
   // The paper's title.
   title: [Paper Title],
 
@@ -156,7 +156,7 @@
         numbering("a)", deepest)
         [ ]
       }
-      *_#(it.body):_*
+      _#(it.body):_
     ]
   }
 
@@ -230,7 +230,7 @@
   ]
 
   // Display the paper's contents.
-  set par(leading: 1.2em) // leading: の値を変更して行間のスペースを指定
+  set par(leading: 1.0em) // leading: の値を変更して行間のスペースを指定
   body
 
   // Display bibliography.

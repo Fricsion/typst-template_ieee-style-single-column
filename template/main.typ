@@ -1,6 +1,6 @@
-#import "../lib.typ": ieee-single
+#import "../lib.typ": ieee-monolith
 
-#show: ieee-single.with(
+#show: ieee-monolith.with(
   title: [A typesetting system to untangle the scientific writing process],
   abstract: [
     The process of scientific writing is often tangled up with the intricacies of typesetting, leading to frustration and wasted time for researchers. In this paper, we introduce Typst, a new typesetting system designed specifically for scientific writing. Typst untangles the typesetting process, allowing researchers to compose papers faster. In a series of experiments we demonstrate that Typst offers several advantages, including faster document creation, simplified syntax, and increased ease-of-use.
@@ -23,14 +23,9 @@
   ),
   index-terms: ("Scientific writing", "Typesetting", "Document creation", "Syntax"),
   bibliography: bibliography("refs.bib"),
-  global-font: ("American Typewriter", "Hiragino Kaku Gothic Interface"), // グローバルのフォントを指定可能
+  global-font: ("Charter", "Hiragino Kaku Gothic Interface"), // グローバルのフォントを指定可能
 )
 
-// // フォントファミリーを指定
-// #set text(font: (
-//   "American Typewriter",
-//   // "Hiragino Kaku Gothic Interface"
-// ))
 
 #outline()
 // ページ番号をふる
