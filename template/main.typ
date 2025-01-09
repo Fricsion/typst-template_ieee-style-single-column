@@ -1,4 +1,4 @@
-#import "../lib.typ": ieee
+#import "@preview/ieee-monolith:0.1.0": ieee
 
 #show: ieee.with(
   title: [A typesetting system to untangle the scientific writing process],
